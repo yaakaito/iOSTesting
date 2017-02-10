@@ -10,9 +10,7 @@ import UIKit
 
 class DeviceShopItemsTableViewController: UITableViewController {
 
-    var shopId: Int!
-    var shop: [String: AnyObject]?
-    var items: [[String: AnyObject]]?
+    var shop: Shop!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,37 +20,6 @@ class DeviceShopItemsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        GodAPIClient.getShop(id: shopId, callback: { (JSON) in
-            guard
-                let status = JSON["status"],
-                status as! String == "ok" else {
-                    print("だめでした・・・")
-                    return
-            }
-            
-            guard
-                let shop = JSON["shop"] else {
-                    return
-            }
-            self.shop = shop as? [String: AnyObject]
-            
-        })
-        
-        GodAPIClient.getItem(shopId: self.shopId, callback: { (JSON) in
-            guard
-                let status = JSON["status"],
-                status as! String == "ok" else {
-                    print("だめでした・・・")
-                    return
-            }
-            
-            guard
-                let items = JSON["items"] else {
-                    return
-            }
-            self.items = items as? [[String: AnyObject]]
-        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +39,12 @@ class DeviceShopItemsTableViewController: UITableViewController {
         if section == 0 {
             return 1
         }
-        return (self.items?.count)!
+        
+        guard let count = self.shop.items?.count else {
+            return 0
+        }
+        
+        return count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -85,11 +57,11 @@ class DeviceShopItemsTableViewController: UITableViewController {
         
         if indexPath.section == 0 {
             // Configure the cell...
-            cell.textLabel?.text = self.shop?["text"] as? String
+            cell.textLabel?.text = self.shop.text
         }
         else {
             // Configure the cell...
-            cell.textLabel?.text = self.items?[indexPath.row]["name"] as? String
+            cell.textLabel?.text = self.shop.items?[indexPath.row].name
         }
         
         return cell

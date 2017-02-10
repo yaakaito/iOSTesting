@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		288CC9B01E4DA49C00D096F8 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC9AF1E4DA49C00D096F8 /* Shop.swift */; };
+		288CC9B11E4DA4A000D096F8 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC9AF1E4DA49C00D096F8 /* Shop.swift */; };
+		288CC9B31E4DB71500D096F8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 288CC9B21E4DB71500D096F8 /* README.md */; };
 		28D1298E1E4D7D3B00E2DD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1298D1E4D7D3B00E2DD05 /* AppDelegate.swift */; };
 		28D129901E4D7D3B00E2DD05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1298F1E4D7D3B00E2DD05 /* ViewController.swift */; };
 		28D129931E4D7D3B00E2DD05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D129911E4D7D3B00E2DD05 /* Main.storyboard */; };
@@ -37,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		102131BDE71C99DB92C55475 /* Pods-iOSTestingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTestingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSTestingTests/Pods-iOSTestingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		288CC9AF1E4DA49C00D096F8 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		288CC9B21E4DB71500D096F8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		28D1298A1E4D7D3B00E2DD05 /* iOSTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D1298D1E4D7D3B00E2DD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D1298F1E4D7D3B00E2DD05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 		28D129811E4D7D3B00E2DD05 = {
 			isa = PBXGroup;
 			children = (
+				288CC9B21E4DB71500D096F8 /* README.md */,
 				28D1298C1E4D7D3B00E2DD05 /* iOSTesting */,
 				28D129A11E4D7D3B00E2DD05 /* iOSTestingTests */,
 				28D1298B1E4D7D3B00E2DD05 /* Products */,
@@ -135,6 +141,7 @@
 				28D129AD1E4D7FE100E2DD05 /* APIClient */,
 				28D129B61E4D8F4C00E2DD05 /* DeviceShopViewController.swift */,
 				28D129B91E4D953A00E2DD05 /* DeviceShopItemsTableViewController.swift */,
+				288CC9AF1E4DA49C00D096F8 /* Shop.swift */,
 			);
 			name = Section1;
 			sourceTree = "<group>";
@@ -323,7 +330,9 @@
 				28D129901E4D7D3B00E2DD05 /* ViewController.swift in Sources */,
 				28D129AF1E4D800800E2DD05 /* GodAPIClient.swift in Sources */,
 				28D1298E1E4D7D3B00E2DD05 /* AppDelegate.swift in Sources */,
+				288CC9B01E4DA49C00D096F8 /* Shop.swift in Sources */,
 				28D129B41E4D8A0200E2DD05 /* Device.swift in Sources */,
+				288CC9B31E4DB71500D096F8 /* README.md in Sources */,
 				28D129B71E4D8F4C00E2DD05 /* DeviceShopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +345,7 @@
 				28D129B01E4D800800E2DD05 /* GodAPIClient.swift in Sources */,
 				28D129BD1E4D9CC300E2DD05 /* Spec.swift in Sources */,
 				28D129B81E4D8F4C00E2DD05 /* DeviceShopViewController.swift in Sources */,
+				288CC9B11E4DA4A000D096F8 /* Shop.swift in Sources */,
 				28D129BB1E4D953A00E2DD05 /* DeviceShopItemsTableViewController.swift in Sources */,
 				28D129A31E4D7D3B00E2DD05 /* iOSTestingTests.swift in Sources */,
 			);

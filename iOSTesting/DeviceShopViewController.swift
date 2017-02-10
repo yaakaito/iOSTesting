@@ -9,9 +9,8 @@
 import UIKit
 
 class DeviceShopViewController: UITableViewController {
-
-    var shops: [[String: AnyObject]] = []
-    
+   
+    var repository = ShopRepository()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,19 +20,7 @@ class DeviceShopViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        GodAPIClient.getAllShop { (JSON) in
-            guard
-                let status = JSON["status"],
-                status as! String == "ok" else {
-                    print("だめでした・・・")
-                    return
-            }
-            
-            guard
-                let shops = JSON["shops"] else {
-                    return
-            }
-            self.shops = shops as! [[String:AnyObject]]
+        repository.fetch {
             self.tableView.reloadData()
         }
     }
@@ -52,14 +39,14 @@ class DeviceShopViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.shops.count
+        return self.repository.shops.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = self.shops[indexPath.row]["name"] as? String
+        cell.textLabel?.text = self.repository.shops[indexPath.row].name
 
         return cell
     }
@@ -111,10 +98,8 @@ class DeviceShopViewController: UITableViewController {
                 let index = self.tableView.indexPathForSelectedRow?.row else {
                 return
             }
-            let shop = self.shops[index]
-            next.shopId = shop["id"] as! Int
+            let shop = self.repository.shops[index]
+            next.shop = shop
         }
     }
- 
-
 }
