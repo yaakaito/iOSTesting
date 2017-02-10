@@ -13,14 +13,14 @@ typealias APICallback = (_ response: JSON) -> Void
 
 class GodAPIClient {
     
-    static func getAllShop(callback: APICallback) {
+    func getAllShop(callback: APICallback) {
         callback([
             "status": "ok",
             "shops": shops
         ])
     }
 
-    static func getShop(id: Int, callback: APICallback) {
+    func getShop(id: Int, callback: APICallback) {
         let r = arc4random_uniform(10)
         if r != 0  && 1 <= id && id <= 3 {
             callback([
@@ -35,7 +35,7 @@ class GodAPIClient {
         }
     }
     
-    static func getItem(shopId: Int, callback: APICallback) {
+    func getItem(shopId: Int, callback: APICallback) {
         let r = arc4random_uniform(10)
         if r != 0  && 1 <= shopId && shopId <= 3 {
             callback([
