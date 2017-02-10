@@ -1,3 +1,5 @@
+以下の機能を実装してそのテストを書く練習
+
 # Section1
 - ViewControllerからいろんなコードを外す
 - APIClientをなんとかしてテストできるようにする
