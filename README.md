@@ -8,3 +8,6 @@
 - Itemを買うというアクションを実装
 - Itemを買うとDeviceに変換されて、Device一覧に登録される
 - Deviceをタップするとsoundがalertで出る
+
+解答例
+- https://github.com/yaakaito/iOSTesting/pulls
